@@ -1,0 +1,18 @@
+﻿<Project>
+  <PropertyGroup>
+    <Site Server="https://tacsc.dev.local/" UserName="sitecore\admin" IsRemoteSitecore="True" />
+  </PropertyGroup>
+  <File Include="Views\TAC\Events\Layout\Events.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0" />
+  <File Include="/Views/TAC/Events/Layout/Events.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{D6A6DE10-1BA7-4D69-924F-711E3ACC0B5A}</Item>
+  </File>
+  <File Include="Views\TAC\Events\SideContent.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{126CA45D-CA72-4781-8C7B-244BDD0ADCC1}</Item>
+  </File>
+  <File Include="Views\TAC\Events\PageBody.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{B106329B-3C17-413E-95D2-EB211DFB9219}</Item>
+  </File>
+  <File Include="Views\TAC\Events\Two-Column.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{6176CB2F-159F-423A-97A6-21ADDBEB6730}</Item>
+  </File>
+</Project>
