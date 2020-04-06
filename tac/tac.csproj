@@ -478,9 +478,10 @@
     <Content Include="Views\TAC\Events\Two-Column.cshtml" />
     <Content Include="Views\TAC\Events\One-Column.cshtml" />
     <Content Include="Views\TAC\Events\HomeContent.cshtml" />
-    <Content Include="Views\TAC\Events\Layout\Events - Copy.cshtml" />
-    <Content Include="Views\TAC\Events\FeatureRow.cshtml" />
     <Content Include="Views\TAC\Events\FeaturedEvent.cshtml" />
+    <Content Include="Views\TAC\Events\FeatureRow.cshtml" />
+    <Content Include="Views\TAC\Events\FeatureRow - Copy.cshtml" />
+    <Content Include="Views\TAC\Events\FeatureRow_3.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -1,20 +1,32 @@
 ﻿@using Sitecore.Mvc
-@using Sitecore.Mvc.Presentation
 @model RenderingModel
 @{
 
 }
 
-<!-- [Featured Events] -->
 <div class="row">
-    <div class="col-sm-4">
-        @Html.Sitecore().DynamicPlaceholder("feature-left")
-    </div>
-    <div class="col-sm-4">
-        @Html.Sitecore().DynamicPlaceholder("feature-middle")
-    </div>
-    <div class="col-sm-4">
-        @Html.Sitecore().DynamicPlaceholder("feature-right")
-    </div>
+    @Html.Sitecore().DynamicPlaceholder("featureSpot", CreateDivWrap, GetNumberOfEventsPerRow(), 4)
 </div>
-<!-- [/Featured Events] -->
+
+@functions
+{
+    int _numberOfEventsPerRowDefault = 3;
+
+    TagBuilder CreateDivWrap(DynamicPlaceholderRenderContext context)
+    {
+        var tagBuilder = new TagBuilder("div");
+        int[] widths = new int[] { 0, 12, 6, 4, 3 };
+        tagBuilder.AddCssClass("col-sm-" + widths[GetNumberOfEventsPerRow()]);
+        return tagBuilder;
+    }
+
+    int GetNumberOfEventsPerRow()
+    {
+        //if (int.TryParse(Model.Rendering.Parameters["NumberOfEventsPerRow"], out var numberOfEventsPerRow))
+        //    return numberOfEventsPerRow;
+
+        if (Model.Rendering.Parameters["NumberOfEventsPerRow"] == null) return _numberOfEventsPerRowDefault;
+
+        return int.Parse(Model.Rendering.Parameters["NumberOfEventsPerRow"]);
+    }
+}
