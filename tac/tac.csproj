@@ -461,6 +461,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Importer\Views\web.config" />
+    <Content Include="Areas\Importer\Views\Shared\Layout.cshtml" />
+    <Content Include="Areas\Importer\Views\Events\Index.cshtml" />
+    <Content Include="Areas\Importer\Views\Events\Confirmation.cshtml" />
     <None Include="Properties\PublishProfiles\TacProfile.pubxml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -483,15 +487,25 @@
     <Content Include="Views\Breadcrumb\Index.cshtml" />
     <Content Include="Views\Overview\Index.cshtml" />
     <Content Include="Views\RelatedEvents\Index.cshtml" />
+    <Content Include="Views\SubscribeForm\Index.cshtml" />
+    <Content Include="Views\SubscribeForm\Confirmation.cshtml" />
+    <Content Include="Views\CommentsForm\Index.cshtml" />
+    <Content Include="Views\CommentsForm\Confirmation.cshtml" />
+    <Content Include="Views\SubscribeForm\Index - Copy.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Importer\Controllers\EventsController.cs" />
+    <Compile Include="Areas\Importer\ImporterAreaRegistration.cs" />
+    <Compile Include="Areas\Importer\Models\Event.cs" />
     <Compile Include="Controllers\BreadcrumbController.cs" />
+    <Compile Include="Controllers\CommentsFormController.cs" />
     <Compile Include="Controllers\EventIntroController.cs" />
     <Compile Include="Controllers\OverviewController.cs" />
     <Compile Include="Controllers\RelatedEventsController.cs" />
+    <Compile Include="Controllers\SubscribeFormController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -499,6 +513,7 @@
     <Compile Include="Models\NavigationItem.cs" />
     <Compile Include="Models\OverviewList.cs" />
     <Compile Include="Models\OverviewItem.cs" />
+    <Compile Include="Models\SubscribeFormLabels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -515,6 +530,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\tac.utils\tac.utils.csproj">
+      <Project>{1C59F3AA-127D-4D46-92A9-8EB82692B76A}</Project>
+      <Name>tac.utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
