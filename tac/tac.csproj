@@ -465,6 +465,16 @@
     <Content Include="Areas\Importer\Views\Shared\Layout.cshtml" />
     <Content Include="Areas\Importer\Views\Events\Index.cshtml" />
     <Content Include="Areas\Importer\Views\Events\Confirmation.cshtml" />
+    <Content Include="App_Config\Include\TAC\Events\Events.DefaultIndexConfiguration.config" />
+    <Content Include="App_Config\Include\TAC\Events\Events.Serialization.config" />
+    <Content Include="App_Config\Include\TAC\Events\Events.Services.Client.config" />
+    <Content Include="App_Config\Include\TAC\Events\Solr.Events.Master.Index.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\TAC\CreateAndSavePdf\CreateAndSavePdf.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="App_Config\Include\TAC\Events\Solr.Events.Web.Index.config" />
     <None Include="Properties\PublishProfiles\TacProfile.pubxml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -517,6 +527,7 @@
     <Compile Include="Models\OverviewList.cs" />
     <Compile Include="Models\OverviewItem.cs" />
     <Compile Include="Models\SubscribeFormLabels.cs" />
+    <Compile Include="CreateAndSavePdf\CreateAndSavePdf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
