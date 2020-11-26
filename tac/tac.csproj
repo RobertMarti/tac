@@ -167,6 +167,9 @@
     <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
       <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="Select.HtmlToPdf, Version=2.4.0.1, Culture=neutral, PublicKeyToken=e0ae9f6e27a97018, processorArchitecture=MSIL">
+      <HintPath>..\packages\Select.HtmlToPdf.2.4.0.1\lib\net40\Select.HtmlToPdf.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Analytics, Version=14.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Analytics.9.3.0\lib\net471\Sitecore.Analytics.dll</HintPath>
     </Reference>
@@ -423,6 +426,9 @@
       <HintPath>..\packages\WebActivatorEx.2.0.3\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
+    <Reference Include="wnvhtmltopdf, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b12703d35a33ff98, processorArchitecture=MSIL">
+      <HintPath>..\packages\Winnovative.HtmlToPdf.15.0.0\lib\net40\wnvhtmltopdf.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -465,13 +471,17 @@
     <Content Include="Areas\Importer\Views\Shared\Layout.cshtml" />
     <Content Include="Areas\Importer\Views\Events\Index.cshtml" />
     <Content Include="Areas\Importer\Views\Events\Confirmation.cshtml" />
-    <Content Include="App_Config\Include\TAC\Events\Events.DefaultIndexConfiguration.config" />
-    <Content Include="App_Config\Include\TAC\Events\Events.Serialization.config" />
+    <Content Include="App_Config\Include\TAC\Events\Events.DefaultIndexConfiguration.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\TAC\Events\Events.Serialization.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Include\TAC\Events\Events.Services.Client.config" />
     <Content Include="App_Config\Include\TAC\Events\Solr.Events.Master.Index.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\TAC\CreateAndSavePdf\CreateAndSavePdf.config">
+    <Content Include="App_Config\Include\TAC\Pdf\PublishProcessor.config">
       <SubType>Designer</SubType>
     </Content>
     <None Include="App_Config\Include\TAC\Events\Solr.Events.Web.Index.config" />
@@ -519,6 +529,7 @@
     <Compile Include="Controllers\OverviewController.cs" />
     <Compile Include="Controllers\RelatedEventsController.cs" />
     <Compile Include="Controllers\SubscribeFormController.cs" />
+    <Compile Include="Pdf\PdfLibrary\SelectPdf.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -527,7 +538,8 @@
     <Compile Include="Models\OverviewList.cs" />
     <Compile Include="Models\OverviewItem.cs" />
     <Compile Include="Models\SubscribeFormLabels.cs" />
-    <Compile Include="CreateAndSavePdf\CreateAndSavePdf.cs" />
+    <Compile Include="Pdf\PdfLibrary\PdfWinnovative.cs" />
+    <Compile Include="Pdf\PublishProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -581,7 +593,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Select.HtmlToPdf.2.4.0.1\build\Select.HtmlToPdf.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Select.HtmlToPdf.2.4.0.1\build\Select.HtmlToPdf.targets'))" />
   </Target>
+  <Import Project="..\packages\Select.HtmlToPdf.2.4.0.1\build\Select.HtmlToPdf.targets" Condition="Exists('..\packages\Select.HtmlToPdf.2.4.0.1\build\Select.HtmlToPdf.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
