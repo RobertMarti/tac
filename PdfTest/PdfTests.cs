@@ -21,26 +21,14 @@ namespace Pdf.Tests
         {
         }
 
-        //[Test]
-        //[TestCase(UrlBlick, FileBlick, 1024)]
-        //[TestCase(UrlEiger, FileEiger, 1600)]
-        //[TestCase(UrlPost, FilePost, 1024)]
-        //[TestCase(UrlWertsachen, FileWertsachen, 1024)]
-        //public void SelectPdf(string url, string fileName, int width)
-        //{
-        //    var ok = new tac.Pdf.PdfLibrary.SelectPdf().CreatePdfFile(url, fileName, width);
-        //    ok.ShouldBeTrue();
-        //}
-
         [Test]
-        //[TestCase(UrlBlick, FileBlick, 1024)]
-        [TestCase(UrlEiger, FileEiger, 1600)]
-        //[TestCase(UrlPost, FilePost, 1024)]
-        //[TestCase(UrlWertsachen, FileWertsachen, 1024)]
+        [TestCase(UrlEiger, FileEiger)]
+        [TestCase(UrlPost, FilePost)]
+        [TestCase(UrlWertsachen, FileWertsachen)]
 
-        public void PdfWinnovative(string url, string fileName, int width)
+        public void PdfExpert(string url, string fileName)
         {
-            var ok = new PdfWinnovative().CreatePdfFile(url, fileName);
+            var ok = new PdfCreatorExpert().CreatePdfFile(url, fileName);
             ok.ShouldBeTrue();
         }
     }
